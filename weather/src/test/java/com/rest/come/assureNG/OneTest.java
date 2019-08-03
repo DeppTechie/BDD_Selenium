@@ -1,8 +1,7 @@
 package com.rest.come.assureNG;
 
+import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.when;
-
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,37 +16,11 @@ import io.cucumber.datatable.dependency.com.fasterxml.jackson.core.JsonParseExce
 import io.cucumber.datatable.dependency.com.fasterxml.jackson.databind.JsonMappingException;
 import io.cucumber.datatable.dependency.com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
-import io.restassured.internal.path.xml.NodeChildrenImpl;
 import io.restassured.path.json.JsonPath;
-import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
 
 public class OneTest {
-	
-/*	
-	@Test
-	public void Satyadeep() throws ParseException {
 		
-	ValidatableResponse response  = given().get("http://api.openweathermap.org/data/2.5/forecast?id=2147714&units=metric&mode=xml&APPID=d49b8056ff6fbc8d249eecef9bf02a9c")
-		.then().statusCode(200);
-
-	
-	SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-	
-		
-		List<Time> timeList  = given().get("http://api.openweathermap.org/data/2.5/forecast?id=2147714&units=metric&mode=xml&APPID=d49b8056ff6fbc8d249eecef9bf02a9c")
-				.then().statusCode(200).body("weatherdata.location.name", Matchers.is("Sydney"))
-				.extract().xmlPath().getList("weatherdata.forecast.time", Time.class);
-		Date date = dateFormat.parse("2019-08-01T12:00:00");
-		XmlPath sydneyMatcher =
-		given().get("http://api.openweathermap.org/data/2.5/forecast?id=2147714&units=metric&mode=xml&APPID=d49b8056ff6fbc8d249eecef9bf02a9c")
-		.then().statusCode(200).body("weatherdata.location.name", Matchers.is("Sydney")).extract().body().xmlPath();
-		
-		NodeChildrenImpl abc =sydneyMatcher.get("weatherdata.forecast.time");
-			
-		}
-*/	
 	
 	@Test
 	public void Satyadeep123() throws ParseException, JsonParseException, JsonMappingException, IOException {
@@ -69,7 +42,7 @@ public class OneTest {
 			Date date = dateFormat.parse(list.getDt_txt());
 			
 		//	System.out.println( date.getDay());
-			if(date.getDay()==5) {
+			if(date.getDay()==4) {
 				Thur_Day_Present = true;				
 		//System.out.println("Thursday's Date = " +date);
 	float temp	= list.getMain().getTemp();
